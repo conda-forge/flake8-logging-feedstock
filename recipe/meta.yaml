@@ -1,13 +1,13 @@
 {% set name = "flake8-logging" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6ad85b386f3e5a65f44ea150dcc878920150813252cded0af7bc41f50be4082d
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 5347f77e746669d2a49d22f251f7a648bbdf285b7140b69aa867f7b42a29da96
 
 build:
   noarch: python
