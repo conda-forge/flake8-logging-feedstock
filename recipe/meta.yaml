@@ -1,5 +1,5 @@
 {% set name = "flake8-logging" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 5347f77e746669d2a49d22f251f7a648bbdf285b7140b69aa867f7b42a29da96
+  sha256: 765046763d44d1dc051071c047fe0fa056d71a524505207c3fbdc47532e7d8af
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - flake8 !=3.2.0,>=3.0
+    - flake8 >=3,!=3.2
 
 test:
   imports:
